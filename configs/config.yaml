@@ -6,10 +6,15 @@ server:
     addr: 0.0.0.0:9000
     timeout: 1s
 data:
-  database:
+  mysql:
     driver: mysql
-    source: root:root@tcp(127.0.0.1:3306)/test
+    source: root:linkmax@tcp(139.9.196.165:3306)/kingmax_dev?timeout=5s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8mb4
+    active: 10
+    idle: 5
   redis:
     addr: 127.0.0.1:6379
-    read_timeout: 0.2s
-    write_timeout: 0.2s
+    auth: "123"
+    active: 10
+    idle: 5
+    readTimeout: 0.2s
+    writeTimeout: 0.2s

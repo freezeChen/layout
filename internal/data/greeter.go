@@ -2,27 +2,27 @@ package data
 
 import (
 	"context"
-	"github.com/freezeChen/layout/internal/biz"
+	"github.com/freezeChen/layout/internal/model"
 	"github.com/go-kratos/kratos/v2/log"
 )
 
-type greeterRepo struct {
+type GreeterRepo struct {
 	data *Data
 	log  *log.Helper
 }
 
 // NewGreeterRepo .
-func NewGreeterRepo(data *Data, logger log.Logger) biz.GreeterRepo {
-	return &greeterRepo{
+func NewGreeterRepo(data *Data, logger log.Logger) *GreeterRepo {
+	return &GreeterRepo{
 		data: data,
 		log:  log.NewHelper(logger),
 	}
 }
 
-func (r *greeterRepo) CreateGreeter(ctx context.Context, g *biz.Greeter) error {
+func (r *GreeterRepo) CreateGreeter(ctx context.Context, g *model.Greeter) error {
 	return nil
 }
 
-func (r *greeterRepo) UpdateGreeter(ctx context.Context, g *biz.Greeter) error {
+func (r *GreeterRepo) UpdateGreeter(ctx context.Context, g *model.Greeter) error {
 	return nil
 }
